@@ -1,10 +1,6 @@
-﻿using System.Reflection;
-using System.Text;
 using Prowl.PaperUI;
 using Prowl.PaperUI.Themes.Origami;
-using Prowl.Scribe;
 using Prowl.Vector;
-using TextAlignment = Prowl.PaperUI.TextAlignment;
 
 // using Shared.Components;
 
@@ -29,16 +25,9 @@ namespace Shared
         // static bool searchFocused = false;
 
         public static Paper Gui;
-        static string textStr = "";
+
         public static void Initialize(Paper paper)
         {
-            using (Stream? stream = Assembly.GetExecutingAssembly().GetManifestResourceStream($"Shared.NewFile1.txt"))
-            {
-                using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
-                {
-                    textStr = reader.ReadToEnd();
-                }
-            }
             Gui = paper;
             Fonts.Initialize(Gui);
             Themes.Initialize();
@@ -50,7 +39,7 @@ namespace Shared
             time += 0.016f; // Assuming ~60fps
 
             //TestWindows();
-            int count = 0;
+
             // Main container with light gray background
             using (Gui.Column("MainContainer")
                 .BackgroundColor(Themes.backgroundColor)
@@ -62,7 +51,7 @@ namespace Shared
                     using (Gui.Row(r+"row").Margin(0,0,0,0)
                                .Enter())
                     {
-                        for (int c = 0; c < 100; c++)
+                        for (int c = 0; c < 80; c++)
                         {
                             /*Gui.Box("r"+r+"c"+c)
                                 //.Size(10)
@@ -70,9 +59,9 @@ namespace Shared
                                 .Text("a", Fonts.arial)
                                 .FontSize(16).TextColor(Themes.lightTextColor)
                                 .Alignment(TextAlignment.MiddleCenter).OnClick((rect) => Themes.ToggleTheme());*/
-                            Button.Primary("r"+r+"c"+c, ""+textStr[count++])
+                            Button.Primary("r"+r+"c"+c, "A")
                                 .FontSize(16)
-                                .Size(20)
+                                .Size(12)
                                 .Margin(0, 0, 0, 0)
                                 .OnClick((rect) => Themes.ToggleTheme());
                         }

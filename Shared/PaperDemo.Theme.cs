@@ -89,7 +89,7 @@ namespace Shared
                 //Dark
                 backgroundColor = Color.FromArgb(255, 40, 43, 48);
                 cardBackground = Color.FromArgb(255, 30, 32, 36);
-                primaryColor = Color.FromArgb(255, 69, 135, 235);
+                primaryColor = Color.FromArgb(50, 20, 128, 128);
                 secondaryColor = Color.FromArgb(255, 66, 68, 72);
                 textColor = Color.FromArgb(255, 226, 232, 240);
                 lightTextColor = Color.FromArgb(255, 148, 163, 184);
@@ -149,8 +149,8 @@ namespace Shared
             // Button styles
             PaperDemo.Gui.CreateStyleFamily("button")
                 .Base(new StyleTemplate()
-                    .Height(40)
-                    .Rounded(8)
+                    .Height(10)
+                    .Rounded(0)
                     .BackgroundColor(Color.FromArgb(50, 0, 0, 0))
                     .Transition(GuiProp.BackgroundColor, 0.2f)
                     .Transition(GuiProp.Rounded, 0.2f)
@@ -167,8 +167,8 @@ namespace Shared
             // Primary button variant
             PaperDemo.Gui.CreateStyleFamily("button-primary")
                 .Base(new StyleTemplate()
-                    .Height(50)
-                    .Rounded(8)
+                    .Height(10)
+                    .Rounded(0)
                     .BackgroundColor(primaryColor)
                     .BackgroundLinearGradient(0, 0, 0, 1, primaryColor, secondaryColor)
                     .Transition(GuiProp.BackgroundGradient, 0.2f)
@@ -187,12 +187,13 @@ namespace Shared
             // Icon button styles
             PaperDemo.Gui.CreateStyleFamily("icon-button")
                 .Base(new StyleTemplate()
-                    .Width(40)
-                    .Height(40)
-                    .Rounded(8)
+                    .Width(10)
+                    .Height(10)
+                    .Rounded(0)
                     .BackgroundColor(Color.FromArgb(50, 0, 0, 0))
                     .Transition(GuiProp.BackgroundColor, 0.2f)
-                    .Transition(GuiProp.Rounded, 0.2f))
+                    //.Transition(GuiProp.Rounded, 0.2f)
+                )
                 .Hovered(new StyleTemplate()
                     .BackgroundColor(Color.FromArgb(100, primaryColor))
                     .Rounded(20))
