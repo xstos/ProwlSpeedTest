@@ -1,0 +1,16 @@
+[submodule "Prowl.Paper"]
+	path = Prowl.Paper
+	url = https://github.com/ProwlEngine/Prowl.Paper.git
+	branch = main
+[submodule "Prowl.Quill"]
+	path = Prowl.Quill
+	url = https://github.com/ProwlEngine/Prowl.Quill.git
+	branch = main
+[submodule "Prowl.Scribe"]
+	path = Prowl.Scribe
+	url = https://github.com/ProwlEngine/Prowl.Scribe.git
+	branch = master
+[submodule "Prowl.Vector"]
+	path = Prowl.Vector
+	url = https://github.com/ProwlEngine/Prowl.Vector.git
+	branch = main

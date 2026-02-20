@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="EmbeddedResources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedResources\**" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="OpenTK" Version="4.9.4" />
+    <PackageReference Include="StbImageSharp" Version="2.30.15" />
+  </ItemGroup>
+
+<ItemGroup>
+  <Compile Include="..\Prowl.Paper\Origami\**\*.cs" Link="src\Origami\%(RecursiveDir)%(FileName)%(Extension)" />
+  <Compile Remove="..\Prowl.Paper\Origami\obj\**" />
+  <Compile Include="..\Prowl.Paper\Paper\**\*.cs" Link="src\Paper\%(RecursiveDir)%(FileName)%(Extension)" />
+  <Compile Remove="..\Prowl.Paper\Paper\obj\**" />
+  <Compile Include="..\Prowl.Quill\Quill\**\*.cs" Link="src\Quill\%(RecursiveDir)%(FileName)%(Extension)" />
+  <Compile Remove="..\Prowl.Quill\Quill\obj\**" />
+  <Compile Include="..\Prowl.Scribe\Scribe\**\*.cs" Link="src\Scribe\%(RecursiveDir)%(FileName)%(Extension)" />
+  <Compile Remove="..\Prowl.Scribe\Scribe\obj\**" />
+  <Compile Include="..\Prowl.Vector\Vector\**\*.cs" Link="src\Vector\%(RecursiveDir)%(FileName)%(Extension)" />
+  <Compile Remove="..\Prowl.Vector\Vector\obj\**" />
+</ItemGroup>
+
+  <ItemGroup>
+    <None Update="shader.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+</Project>
